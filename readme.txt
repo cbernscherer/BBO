@@ -8,3 +8,7 @@ Verzeichnis wie das Script gelegt werden.
 Die Ausgabe heißt "bridgewebs_import.csv" und kann in BridgeWebs importiert werden.
 
 Das Script benötigt das Paket pandas.
+
+Alle markieren in BridgeWebs mit
+v1=document.querySelectorAll("input[type=checkbox]")
+for(var i=0;i<v1.length;i++){v1[i].checked=true;}

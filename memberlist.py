@@ -17,6 +17,13 @@ def convert(string:str):
 reg_players = pd.read_excel('Spielerliste BBO.xlsx', names=['Nick', 'Name'], usecols=[0, 1])
 reg_players = reg_players[reg_players['Nick'].notna() & reg_players['Name'].notna()]
 
+oebv_players = pd.read_excel('Spielerliste BBO.xlsx', sheet_name='ÖBVSpielerdatei',
+                             names=['Zuname', 'Vorname'], usecols=[1, 2])
+oebv_players = oebv_players[oebv_players['Vorname'].notna() & oebv_players['Zuname'].notna()]
+oebv_list = oebv_players[['Vorname', 'Zuname']].values
+names = [' '.join(list(oebv_list[i])).lower() for i in range(len(oebv_list))]
+oebv_players['Name'] = names
+
 reg_players['ALIAS'] = reg_players['Nick']
 reg_players['CLUB1'] = reg_players['Nick']
 reg_players['CLUB2'] = ''
@@ -46,13 +53,23 @@ surnames = []
 firstnams = []
 
 for name in names:
-    if convert_uml:
-        name = convert(name)
+    oebv_entry = oebv_players[oebv_players['Name'] == name.lower()].values
 
-    tmp = name.split(' ')
+    if len(oebv_entry) > 0:
+        if convert_uml:
+            firstnams.append(convert(oebv_entry[0, 1]).title())
+            surnames.append(convert(oebv_entry[0, 0]).title())
+        else:
+            firstnams.append(oebv_entry[0, 1].title())
+            surnames.append(oebv_entry[0, 0].title())
+    else:
+        if convert_uml:
+            name = convert(name)
 
-    surnames.append(tmp[-1])
-    firstnams.append(' '.join(tmp[0:-1]))
+        tmp = name.split(' ')
+
+        surnames.append(tmp[-1])
+        firstnams.append(' '.join(tmp[0:-1]))
 
 reg_players['SURNAME'] = surnames
 reg_players['FIRSTNAME'] = firstnams
