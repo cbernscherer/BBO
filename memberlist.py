@@ -3,14 +3,24 @@ from _collections import defaultdict
 
 convert_uml = True
 
+convert_table = {
+    'Ä': 'Ae',
+    'Ö': 'Oe',
+    'Ü': 'Ue',
+    'ä': 'ae',
+    'ö': 'oe',
+    'ü': 'ue',
+    'ß': 'ss',
+    'á': 'a',
+    'é': 'e',
+    'í': 'i',
+    'ó': 'o',
+    'ú': 'u',
+}
+
 def convert(string:str):
-    string = string.replace('Ä', 'Ae')
-    string = string.replace('Ö', 'Oe')
-    string = string.replace('Ü', 'Ue')
-    string = string.replace('ä', 'ae')
-    string = string.replace('ö', 'oe')
-    string = string.replace('ü', 'ue')
-    string = string.replace('ß', 'ss')
+    for k, v in convert_table.items():
+        string = string.replace(k, v)
 
     return string
 
