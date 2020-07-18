@@ -39,7 +39,7 @@ names = [' '.join(list(oebv_list[i])).lower() for i in range(len(oebv_list))]
 oebv_players['Name'] = names
 
 reg_players['ALIAS'] = reg_players['Nick']
-reg_players['CLUB1'] = reg_players['Nick']
+reg_players['BBOUSERNAME'] = reg_players['Nick']
 reg_players['CLUB2'] = ''
 reg_players['CLUB3'] = ''
 reg_players['CLUB4'] = ''
