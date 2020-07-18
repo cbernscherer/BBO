@@ -31,6 +31,7 @@ reg_players = reg_players[reg_players['Nick'].notna() & reg_players['Name'].notn
 oebv_players = pd.read_excel('Spielerliste BBO.xlsx', sheet_name='ÖBVSpielerdatei',
                              names=['Zuname', 'Vorname'], usecols=[1, 2])
 oebv_players = oebv_players[oebv_players['Vorname'].notna() & oebv_players['Zuname'].notna()]
+print(len(oebv_players))
 
 # create column for query
 oebv_list = oebv_players[['Vorname', 'Zuname']].values
@@ -83,7 +84,7 @@ for name in names:
         if convert_uml:
             name = convert(name)
 
-        tmp = name.split(' ')
+        tmp = name.strip().split(' ')
 
         surnames.append(tmp[-1])
         firstnams.append(' '.join(tmp[0:-1]))
