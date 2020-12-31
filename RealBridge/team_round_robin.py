@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup
-import re
+from rb_classes import Player
 
 with open('201227121341TeamforAustria27122020_lin.xml', 'r') as f:
     t = f.read()
@@ -18,5 +18,3 @@ for team in teamssoup:
     t['Nr'] =team.attrs['TEAM_ID']
     t['Name'] = team.attrs['TEAM_NAME']
     teams.append(t)
-
-print(teams)
