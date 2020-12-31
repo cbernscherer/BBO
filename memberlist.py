@@ -52,6 +52,7 @@ reg_players = reg_players[duplicates == False]
 
 occurrencies = defaultdict(lambda: 1)
 
+
 # join multiple nicks of a player for the import in alias
 for entry in duplicate_entries.itertuples():
     occurrencies[entry.Name] += 1
