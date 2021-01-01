@@ -4,9 +4,12 @@ class Player():
         self.id = pl_id
 
 class Pair():
-    def __init__(self, players, id):
+    def __init__(self, players, id, hands_played, imps):
         self.players = players
         self.id = id
+        self.hands_played = hands_played
+        self.imps = imps
+
 
 class Team():
     def __init__(self, team_id, team_name):

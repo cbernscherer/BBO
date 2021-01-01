@@ -15,7 +15,19 @@ teamssoup = participants.findAll('TEAM')
 teams = []
 for ts in teamssoup:
     attrs = ts.attrs
-    team = Team(attrs['TEAM_ID'], attrs['TEAM_NAME'])
+    team = Team(int(attrs['TEAM_ID']), attrs['TEAM_NAME'])
+
+    pairsoup = ts.findAll('PAIR')
+
+    pairs = []
+    players =[]
+
+    for ps in pairsoup:
+        pair_id = int(ps.find('PAIR_NUMBER').text.split(':')[1])
+        boards_played = int(ps.find('BOARDS_PLAYED').text)
+        pair_imps = float(ps.find('PAIR_IMPS').text)
+
+        print(':'.join((str(team.id), str(pair_id))), boards_played, pair_imps)
 
     teams.append(team)
 
