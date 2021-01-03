@@ -1,0 +1,15 @@
+Name, ÖBV-Nummer
+Raffael Wadl,5367
+Aurélie Belin,6728
+Bernard Utner,1728
+Dietlind Angebrandt,876
+Gerhard Pollak,929
+Betina Artmer,2295
+Wolfgang Mayer,762
+Georg Haschek,34
+Markus Knob,1121
+Clemens Wanha,2142
+Peter Zelnik,3281
+Daniel Landau,2852
+Stefan Propst,80
+Peter Kratochwil,2838
