@@ -13,3 +13,7 @@ Peter Zelnik,3281
 Daniel Landau,2852
 Stefan Propst,80
 Peter Kratochwil,2838
+Davies Guttmann,2873
+Wolfgang Lauss,5144
+Gunther Purkarthofer,791
+Gustav Floszmann,202
