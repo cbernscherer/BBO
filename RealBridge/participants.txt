@@ -1,4 +1,3 @@
-Name, ÖBV-Nummer
 Raffael Wadl,5367
 Aurélie Belin,6728
 Bernard Utner,1728
