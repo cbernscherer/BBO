@@ -16,3 +16,5 @@ Davies Guttmann,2873
 Wolfgang Lauss,5144
 Gunther Purkarthofer,791
 Gustav Floszmann,202
+Michael Knoll,5089
+Michael Cramer,931
