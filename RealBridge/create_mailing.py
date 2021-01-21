@@ -1,13 +1,13 @@
 import pandas as pd
 import numpy as np
 
-teams_file = 'Wiener Teams.xlsx'
-players_file = 'wr_players.csv'
+teams_file = 'teams.csv'
+players_file = 'players.csv'
 mailing_list = 'mailing.csv'
-base_link = 'https://play.realbridge.online/bt.html?p=210117125962&q=WienerMixedTeam2021b'
+base_link = 'https://play.realbridge.online/cf.html?p=210121127224&q=TeamCupJ3'
 
-# teams = pd.read_csv(teams_file, encoding='utf-8')
-teams = pd.read_excel(teams_file)
+teams = pd.read_csv(teams_file, encoding='utf-8')
+# teams = pd.read_excel(teams_file)
 players = pd.read_csv(players_file, encoding='utf-8', dtype={'OeBV-Nummer':np.str})
 
 with open(mailing_list, 'w', encoding='utf-8') as mf:

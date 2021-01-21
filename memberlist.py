@@ -4,18 +4,18 @@ from _collections import defaultdict
 convert_uml = True
 
 convert_table = {
-    'Ä': 'Ae',
-    'Ö': 'Oe',
-    'Ü': 'Ue',
-    'ä': 'ae',
-    'ö': 'oe',
-    'ü': 'ue',
-    'ß': 'ss',
-    'á': 'a',
-    'é': 'e',
-    'í': 'i',
-    'ó': 'o',
-    'ú': 'u',
+    'Ä': '&#196;',
+    'Ö': '&#214;',
+    'Ü': '&#220;',
+    'ä': '&#228;',
+    'ö': '&#246;',
+    'ü': '&#252;',
+    'ß': '&#223;',
+    'á': '&#225;',
+    'é': '&#233;',
+    'í': '&#237;',
+    'ó': '&#243;',
+    'ú': '&#250;',
 }
 
 def convert(string:str):
@@ -75,8 +75,8 @@ for name in names:
     if len(oebv_entry) > 0:
         # if existing from the ÖBV data
         if convert_uml:
-            firstnams.append(convert(oebv_entry[0, 1]).title())
-            surnames.append(convert(oebv_entry[0, 0]).title())
+            firstnams.append(convert(oebv_entry[0, 1].title()))
+            surnames.append(convert(oebv_entry[0, 0].title()))
         else:
             firstnams.append(oebv_entry[0, 1].title())
             surnames.append(oebv_entry[0, 0].title())
