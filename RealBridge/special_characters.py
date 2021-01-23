@@ -1,4 +1,5 @@
-filename = '210102122486Dreiknigspokal2021_lin.xml'
+# filename = '210102122486Dreiknigspokal2021_lin.xml'
+filename = input('Bitte gib den Filenamen ein und dann Enter: ')
 
 convert_table = {
     'Ä': '&#196;',
