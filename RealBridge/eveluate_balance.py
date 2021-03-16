@@ -3,6 +3,7 @@ import numpy as np
 
 # usebio = '210102122486Dreiknigspokal2021.xml'
 usebio = '210119125250Dienstag1912021.xml'
+boards_per_round = 2
 
 with open(usebio, 'r', encoding='utf-8') as f:
     soup = bs4.BeautifulSoup(f, 'xml')
@@ -32,6 +33,7 @@ for board in boards:
     movement.append([(ns[i]+1, ew[i]+1) for i in range(0, len(ns))])
 
     for i in range(0, len(ns)):
+        # direct opponent
         bal_matrix[min(ns[i], ew[i]), max(ns[i], ew[i])] += len(ns) - 1
 
         for j in range(i+1, len(ns)):
@@ -43,11 +45,11 @@ for board in boards:
             bal_matrix[min(ns[i], ns[j]), max(ns[i], ns[j])] += 1
             bal_matrix[min(ew[i], ew[j]), max(ew[i], ew[j])] += 1
 
-bal_matrix_sq = bal_matrix ** 2
+bal_matrix_sq = bal_matrix ** 2 # the lower left are all zeros
 
 calibre = 100. * s_opt**2 / (.5 * nr_pairs * (nr_pairs - 1) * np.sum(bal_matrix_sq))
 
-for i in range(0, nr_boards, 2):
+for i in range(0, nr_boards, boards_per_round):
     print(movement[i])
 
 print('calibre:', round(calibre, 2))

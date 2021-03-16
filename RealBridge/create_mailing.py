@@ -4,7 +4,7 @@ import numpy as np
 teams_file = 'teams.csv'
 players_file = 'players.csv'
 mailing_list = 'mailing.csv'
-base_link = 'https://play.realbridge.online/cf.html?p=210121127224&q=TeamCupJ3'
+base_link = 'https://play.realbridge.online/cq.html?p=210311122268&q=BCATeamCupM3'
 
 teams = pd.read_csv(teams_file, encoding='utf-8')
 # teams = pd.read_excel(teams_file)
