@@ -19,7 +19,10 @@ nr_tables = nr_pairs // 2
 # print(nr_tables)
 
 s_opt = nr_tables * (nr_tables - 1) * nr_boards
-# print(s_opt)
+
+n_upper = s_opt % (nr_pairs * (nr_pairs - 1) * .5)
+n_lowwer = (nr_pairs * (nr_pairs - 1) * .5) - n_upper
+avg = s_opt // (nr_pairs * (nr_pairs - 1) * .5)
 
 bal_matrix = np.zeros([nr_pairs, nr_pairs], dtype=np.int)
 
@@ -47,7 +50,8 @@ for board in boards:
 
 bal_matrix_sq = bal_matrix ** 2 # the lower left are all zeros
 
-calibre = 100. * s_opt**2 / (.5 * nr_pairs * (nr_pairs - 1) * np.sum(bal_matrix_sq))
+# calibre = 100. * s_opt**2 / (.5 * nr_pairs * (nr_pairs - 1) * np.sum(bal_matrix_sq))
+calibre = (100. * (avg**2 * n_lowwer + (avg+1)**2 *n_upper)) / np.sum(bal_matrix_sq)
 
 print('\nMovement')
 for i in range(0, nr_boards, boards_per_round):
