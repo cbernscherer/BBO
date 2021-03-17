@@ -49,7 +49,11 @@ bal_matrix_sq = bal_matrix ** 2 # the lower left are all zeros
 
 calibre = 100. * s_opt**2 / (.5 * nr_pairs * (nr_pairs - 1) * np.sum(bal_matrix_sq))
 
+print('\nMovement')
 for i in range(0, nr_boards, boards_per_round):
     print(movement[i])
 
-print('calibre:', round(calibre, 2))
+print('\nBalance Matrix\n', bal_matrix)
+print('sum:', np.sum(bal_matrix))
+
+print('\ncalibre:', round(calibre, 2))
